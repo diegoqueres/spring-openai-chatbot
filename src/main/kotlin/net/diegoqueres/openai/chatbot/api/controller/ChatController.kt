@@ -18,4 +18,8 @@ class ChatController(
     fun chat(@RequestParam message: String): ResponseEntity<Response> =
         ResponseEntity.ok(chatService.chat(message))
 
+    @GetMapping("/chat-with-memory")
+    fun chatWithMemory(@RequestParam chatId: String?, @RequestParam message: String): ResponseEntity<Response> =
+        ResponseEntity.ok(chatService.chatWithMemory(chatId, message))
+
 }
