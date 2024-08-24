@@ -1,0 +1,56 @@
+[
+  {
+    "title": "Qual o prazo de aprovação do pedido?",
+    "content": "O prazo para a aprovação do pedido depende da forma de pagamento escolhida. Para boleto bancário, o banco pode levar até 3 dias úteis para confirmar o pagamento. No caso de cartão de crédito, NexCommerce Pay, e vale compra, o prazo é de até 48 horas úteis. Para Pix, o pagamento pode ser aprovado em até 2 horas.",
+    "category": "PEDIDO",
+    "metatags": ["processamento", "aprovação do pedido", "liberação do pedido"]
+  },
+  {
+    "title": "Meu pedido foi cancelado. Como recebo o reembolso?",
+    "content": "O reembolso será realizado na mesma forma de pagamento utilizada no pedido. Para boleto bancário, o valor é restituído em até 3 dias úteis. Para cartão de crédito, o estorno pode ocorrer em até 7 dias úteis. No caso de Pix, a restituição acontece em até 48 horas úteis após o cancelamento.",
+    "category": "PEDIDO",
+    "metatags": ["reembolso", "cancelamento", "estorno", "pagamento"]
+  },
+  {
+    "title": "Qual o prazo de entrega do meu pedido?",
+    "content": "O prazo de entrega começa a contar a partir da confirmação do pagamento. Se o pedido tiver mais de um produto, com diferentes fornecedores, os prazos podem variar.",
+    "category": "PEDIDO",
+    "metatags": ["entrega", "prazo de envio", "despacho do pedido", "envio"]
+  },
+  {
+    "title": "Qual o prazo que tenho para me arrepender de uma compra?",
+    "content": "Você têm 30 dias para se arrepender de uma compra na NexCommerce: 7 dias garantidos pelo código de defesa do consumidor + 23 dias que a NexCommerce disponibiliza para você se arrepender de um pedido. ",
+    "category": "PEDIDO",
+    "metatags": ["arrependimento de compra", "cancelamento de compra", "prazo"]
+  },
+  {
+    "title": "Como faço pra pagar com Pix?",
+    "content": "Agora você também pode pagar seus pedidos com Pix! É fácil e rápido, olha só: \n\n\n\nPelo site NexCommerce: é só colocar o produto na sacola e na forma de pagamento escolher a opção Pix. Em uma nova janela estará o QRCode, que você pode escanear direto com o seu celular, pelo app do seu banco.\n\n\n\nPelo aplicativo NexCommerce: É só seguir os mesmos passos até o pagamento do pedido. Na página de conclusão, não aparecerá o QRCode, mas sim um código. É só copiar e colar no app do seu banco.\n\n\n\nAh! O código tem validade de 13 horas. Fique de olho! Se o pagamento não for feito dentro desse prazo, o pedido será cancelado automaticamente.",
+    "category": "PEDIDO",
+    "metatags": ["pix", "pagamento", "forma de pagamento"]
+  },
+  {
+    "title": "O pedido acabou de ser realizado, posso fazer a troca ou devolução?",
+    "content": "Você pode solicitar a troca acessando \"Meus Pedidos\" assim que sua compra for aprovada.\n\n\nSe for um produto vendido e entregue por lojas parceiras, clique em \"Preciso de ajuda\" e depois em \"Quero trocar ou cancelar\".\n\nAgora, se for vendido e entregue pela NexCommerce, clique em \"Trocar ou devolver produto\".\n\n\n\nSe houver mais de um item no seu pedido, todos serão incluídos na solicitação.\n\n\n\nSe fez a compra por boleto bancário e ainda não realizou o pagamento, refaça o pedido escolhendo o item desejado.\n\nO pedido anterior será cancelado automaticamente.",
+    "category": "PEDIDO",
+    "metatags": ["troca", "devolução", "alteração de pedido"]
+  },
+  {
+    "title": "Como faço para rastrear meu pedido?",
+    "content": "Você pode acompanhar o seu pedido pelo aplicativo ou site da NexCommerce. Olha só: \n\n\n\nPelo aplicativo NexCommerce: Abra o aplicativo e faça login. Depois clique em “Pedidos”. Selecione o produto que deseja consultar. Acompanhe o andamento do pedido pela linha do tempo.\n\n\n\nPelo site NexCommerce: Acesse o site, clique em \"Meus pedidos\" e faça login. Selecione o pedido que deseja consultar e clique em \"Ver detalhes\". Acompanhe o andamento pela linha do tempo.\n\n\n\nAh! A cada atualização do pedido, você será notificado pelo Whatsapp e e-mail, se tiver optado por receber nossas mensagens.",
+    "category": "PEDIDO",
+    "metatags": ["rastreio", "entrega", "acompanhar entrega"]
+  },
+  {
+    "title": "Qual o prazo de validade de um gift card da NexCommerce?",
+    "content": "Um gift card da NexCommerce é válido por até 3 meses.",
+    "category": "GIFT_CARD",
+    "metatags": ["validade", "gift card", "validade de crédito"]
+  },
+  {
+    "title": "A NexCommerce conta com lojas físicas?",
+    "content": "Não dispomos de loja física. A NexCommerce é um marketplace onde você só pode comprar pela internet.",
+    "category": "LOJA",
+    "metatags": ["loja física", "endereço", "compras presenciais"]
+  }
+]
