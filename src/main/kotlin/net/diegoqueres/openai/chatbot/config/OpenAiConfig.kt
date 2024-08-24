@@ -4,6 +4,7 @@ import org.springframework.ai.chat.client.ChatClient
 import org.springframework.ai.chat.client.advisor.PromptChatMemoryAdvisor
 import org.springframework.ai.chat.memory.InMemoryChatMemory
 import org.springframework.ai.chat.model.ChatModel
+import org.springframework.ai.chat.prompt.SystemPromptTemplate
 import org.springframework.ai.embedding.EmbeddingModel
 import org.springframework.ai.openai.OpenAiEmbeddingModel
 import org.springframework.ai.openai.api.OpenAiApi
@@ -34,6 +35,23 @@ class OpenAiConfig {
         val chatMemory = InMemoryChatMemory()
 
         return ChatClient.builder(chatModel)
+            .defaultAdvisors(PromptChatMemoryAdvisor(chatMemory))
+            .build()
+    }
+
+    /**
+     * Chat client bean with default system prompt and "in memory chat" (development purposes only).
+     */
+    @Bean
+    fun customerAssistantClient(chatModel: ChatModel, customerAssistantProperties: CustomerAssistantProperties): ChatClient {
+        val chatMemory = InMemoryChatMemory()
+
+        val systemTemplate = SystemPromptTemplate(customerAssistantProperties.prompt).createMessage(
+            mapOf("name" to customerAssistantProperties.name)
+        )
+
+        return ChatClient.builder(chatModel)
+            .defaultSystem(systemTemplate.content)
             .defaultAdvisors(PromptChatMemoryAdvisor(chatMemory))
             .build()
     }
