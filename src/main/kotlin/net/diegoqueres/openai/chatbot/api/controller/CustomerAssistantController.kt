@@ -18,4 +18,8 @@ class CustomerAssistantController(
     fun productInformation(@RequestParam(required = true) name: String): ResponseEntity<Response> =
         ResponseEntity.ok(customerAssistantService.productInformation(name))
 
+    @GetMapping("/support")
+    fun support(@RequestParam chatId: String?, @RequestParam(required = true) message: String): ResponseEntity<Response> =
+        ResponseEntity.ok(customerAssistantService.support(chatId, message))
+
 }
