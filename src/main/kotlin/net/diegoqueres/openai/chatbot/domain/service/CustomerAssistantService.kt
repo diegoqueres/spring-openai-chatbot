@@ -16,7 +16,7 @@ import java.util.*
 class CustomerAssistantService(
     private val customerAssistantProperties: CustomerAssistantProperties,
     private val customerAssistantClient: ChatClient,
-    private val chatVectorStore: VectorStore
+    private val vectorStore: VectorStore
 ) {
 
     /**
@@ -60,7 +60,7 @@ class CustomerAssistantService(
             .user(message)
             .advisors { advisor: AdvisorSpec ->
                 advisor.param(CHAT_MEMORY_CONVERSATION_ID_KEY, chatId)
-                    .advisors(QuestionAnswerAdvisor(chatVectorStore, searchRequest))
+                    .advisors(QuestionAnswerAdvisor(vectorStore, searchRequest))
             }
             .call()
             .chatResponse()
