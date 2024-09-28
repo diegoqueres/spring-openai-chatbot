@@ -4,14 +4,14 @@ import net.diegoqueres.openai.chatbot.domain.model.Faq
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory
 import org.springframework.ai.document.Document
-import org.springframework.ai.vectorstore.VectorStore
+import org.springframework.ai.vectorstore.RedisVectorStore
 import org.springframework.context.annotation.Configuration
 import org.springframework.data.mongodb.core.MongoTemplate
 
 @Configuration
 class VectorStoreConfig(
     private val mongoTemplate: MongoTemplate,
-    private val vectorStore: VectorStore
+    private val redisVectorStore: RedisVectorStore
 ) {
     private val logger: Logger = LoggerFactory.getLogger(VectorStoreConfig::class.java)
 
@@ -33,7 +33,19 @@ class VectorStoreConfig(
 //    }
 
     init {
+        cleanVectorStore()
         loadDocumentsOnVectorStore()
+    }
+
+    private fun cleanVectorStore() {
+        val jedisPooled = redisVectorStore.jedis
+        val keys = jedisPooled.keys("default:*")
+        if (keys.isNotEmpty()) {
+            jedisPooled.del(*keys.toTypedArray())
+            logger.info("Deleted {} keys from Redis vector store", keys.size)
+        } else {
+            logger.info("No keys found to delete in Redis vector store")
+        }
     }
 
     /**
@@ -46,7 +58,7 @@ class VectorStoreConfig(
         val openAiDocuments = mongoDocuments.map {
             Document(it.content, mapOf("title" to it.title, "category" to it.category, "metatags" to it.metatags))
         }
-        vectorStore.add(openAiDocuments)
+        redisVectorStore.add(openAiDocuments)
     }
 
 }
